@@ -124,6 +124,14 @@ def validate(args):
             if cost_array[i - 1][j] != line[j]:
                 LOG.error('Cost Array: Value mismatch at (%d, %d): %d != %d' %(i - 1, j, cost_array[i-1][j], line[j]))
                 return False
+    
+    max_cost = 0
+    for i in range (0, n):
+        for j in range (0, m):
+            if cost_array[i][j] > max_cost:
+                max_cost = cost_array[i][j]
+    print "Max cost: " + str(max_cost)
+    
     return True
 
 
